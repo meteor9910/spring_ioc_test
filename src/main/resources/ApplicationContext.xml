@@ -4,8 +4,67 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<!--    <bean id="user" class="com.hopu.ioc.User">-->
+<!--        <constructor-arg name="address" ref="address"/>-->
+
+
+<!--        <constructor-arg name="id" value="1"/>-->
+<!--        <constructor-arg name="password" value="123456"/>-->
+<!--        <constructor-arg name="username" value="ben"/>-->
+<!--    </bean>-->
+
+    <bean id="address" class="com.hopu.ioc.Address"/>
+
+<!--    <bean id="user" class="com.hopu.ioc.User">-->
+<!--        <property name="address" ref="address"/>-->
+<!--        <property name="id" value="3"/>-->
+<!--        <property name="password" value="11456"/>-->
+<!--        <property name="username" value="凯撒"/>-->
+
+<!--    </bean>-->
+
+
+
+
+
+    <import resource="bean1.xml"/>
+    <import resource="bean2.xml"/>
+
+
+
+
+
     <bean id="user" class="com.hopu.ioc.User">
-        <!-- collaborators and configuration for this bean go here -->
+    <property name="str">
+        <array>
+            <value>EE</value>
+            <value>FF</value>
+        </array>
+    </property>
+    <property name="list">
+        <list>
+            <value>AA</value>
+            <value>BB</value>
+        </list>
+    </property>
+    <property name="set">
+        <set>
+            <value>CC</value>
+            <value>DD</value>
+        </set>
+    </property>
+    <property name="map">
+        <map>
+            <entry key="GG" value="gg"/>
+            <entry key="HH" value="hh"/>
+        </map>
+    </property>
+    <property name="properties">
+    <props>
+    <prop key="II">ii</prop>
+    <prop key="JJ">jj</prop>
+    </props>
+    </property>
     </bean>
 
 

@@ -12,8 +12,13 @@ public class locTest {
     public void testIoc() {
         ApplicationContext act =
                 new ClassPathXmlApplicationContext("ApplicationContext.xml");
+        //读取配置文件的ID
         User user = (User) act.getBean("user");
-        user.study();
+//        user.study();
+        User user2 = (User) act.getBean("user");
+        System.out.println(user==user2);
+
+        ((ClassPathXmlApplicationContext)act).close();
 
     }
 }
